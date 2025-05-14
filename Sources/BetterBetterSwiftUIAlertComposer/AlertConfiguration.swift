@@ -1,8 +1,9 @@
 //
 //  AlertConfiguration.swift
-//  AlertComposer
+//  BetterBetterSwiftUIAlertComposer
 //
 //  Created by Michael Colonna on 5/13/25.
+//  Copyright © 2025 Michael Colonna All rights reserved.
 //
 
 import SwiftUI

@@ -1,8 +1,9 @@
 //
 //  LocalizedStringKeys.swift
-//  AlertComposer
+//  BetterBetterSwiftUIAlertComposer
 //
 //  Created by Michael Colonna on 1/20/24.
+//  Copyright © 2024 Michael Colonna All rights reserved.
 //
 
 import SwiftUI

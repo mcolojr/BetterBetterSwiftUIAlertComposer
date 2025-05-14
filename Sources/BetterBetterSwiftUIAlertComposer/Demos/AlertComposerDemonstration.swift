@@ -1,8 +1,9 @@
 //
 //  AlertComposerDemonstration.swift
-//  CoupleDo
+//  BetterBetterSwiftUIAlertComposer
 //
-//  Created by Mikey Colonna on 2/23/24.
+//  Created by Michael Colonna on 5/26/22.
+//  Copyright © 2022 Michael Colonna All rights reserved.
 //
 
 import SwiftUI

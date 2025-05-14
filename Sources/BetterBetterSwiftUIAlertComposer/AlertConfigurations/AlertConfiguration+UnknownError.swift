@@ -1,8 +1,9 @@
 //
-//  asd.swift
-//  CoupleDo
+//  AlertConfiguration+UnknownError.swift
+//  BetterBetterSwiftUIAlertComposer
 //
-//  Created by Mikey Colonna on 2/23/24.
+//  Created by Michael Colonna on 2/23/24.
+//  Copyright © 2024 Michael Colonna All rights reserved.
 //
 
 import SwiftUI
