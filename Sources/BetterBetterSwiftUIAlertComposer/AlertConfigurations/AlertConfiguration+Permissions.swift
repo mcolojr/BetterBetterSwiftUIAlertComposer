@@ -6,6 +6,7 @@
 //  Copyright © 2024 Michael Colonna All rights reserved.
 //
 
+#if canImport(UIKit) && os(iOS)
 import SwiftUI
 
 extension AlertConfiguration {
@@ -19,9 +20,8 @@ extension AlertConfiguration {
     /// - Parameters:
     ///   - type: The type of permission that has been denied (`PermissionsType`), such as camera, contacts, or notifications.
     ///   - dismissAction: An optional closure that is called when the user dismisses the alert with the title "Close". If `nil`, the alert will only include the default close action.
-    ///   - openSettingsAction: A closure that opens the Settings app. Pass in the logic to open the phone's Settings app (e.g: `UIApplication.shared.open(settingsUrl)`)
     /// - Returns: An `AlertConfiguration` tailored to inform the user about the denied permission and guide them to enable it through the Settings app.
-    public static func permissionsDenied(for type: PermissionsType, dismissAction: (() -> Void)? = nil, openSettingsAction: @escaping (() -> Void)) -> AlertConfiguration {
+    public static func permissionsDenied(for type: PermissionsType, dismissAction: (() -> Void)? = nil) -> AlertConfiguration {
         var title: LocalizedStringKey
         var message: LocalizedStringKey
         
@@ -48,13 +48,9 @@ extension AlertConfiguration {
                 }
                 
                 Action(title: "Open Settings", isPrimaryAction: true, action: {
-                    openSettingsAction()
-                    // Would be something like:
-                    /*
                      if let settingsUrl = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(settingsUrl) {
                         UIApplication.shared.open(settingsUrl)
                      }
-                     */
                 })
             }
         )
@@ -103,3 +99,4 @@ extension AlertConfiguration {
         )
     }
 }
+#endif
