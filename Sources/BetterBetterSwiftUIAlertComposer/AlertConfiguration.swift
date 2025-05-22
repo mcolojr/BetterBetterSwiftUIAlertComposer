@@ -16,17 +16,17 @@ import SwiftUI
 /// an optional closure to execute when the action is selected, and the action's role which influences its appearance and position in the alert dialog.
 ///
 /// - Note: An `id` property is automatically generated to uniquely identify each alert configuration.
-struct AlertConfiguration: Identifiable {
-    let id: UUID = UUID()
-    let title: LocalizedStringKey
-    let message: LocalizedStringKey
-    var actions: [Action] = []
+public struct AlertConfiguration: Identifiable {
+    public let id: UUID = UUID()
+    public let title: LocalizedStringKey
+    public let message: LocalizedStringKey
+    public var actions: [Action] = []
 
     /// Represents an action in an alert dialog.
     ///
     /// This struct encapsulates the title of the action, an optional closure that is called when the action is selected.
     /// The ``role`` or ``isPrimaryAction`` properties of the action can affect its appearance and placement within the alert.
-    struct Action {
+    public struct Action {
         /// The localized string key for the button's title
         let title: LocalizedStringKey
         
@@ -58,7 +58,7 @@ struct AlertConfiguration: Identifiable {
         ///     // Perform the action
         /// })
         /// ```
-        init(title: LocalizedStringKey, role: ButtonRole, action: (() -> Void)? = nil) {
+        public init(title: LocalizedStringKey, role: ButtonRole, action: (() -> Void)? = nil) {
             self.title = title
             self.role = role
             self.isPrimaryAction = false
@@ -80,7 +80,7 @@ struct AlertConfiguration: Identifiable {
         ///     // Perform the action
         /// })
         /// ```
-        init(title: LocalizedStringKey, isPrimaryAction: Bool, action: (() -> Void)? = nil) {
+        public init(title: LocalizedStringKey, isPrimaryAction: Bool, action: (() -> Void)? = nil) {
             self.title = title
             self.role = .none
             self.isPrimaryAction = isPrimaryAction
@@ -90,7 +90,7 @@ struct AlertConfiguration: Identifiable {
 }
 
 extension AlertConfiguration: Equatable {
-    static func == (lhs: AlertConfiguration, rhs: AlertConfiguration) -> Bool {
+    public static func == (lhs: AlertConfiguration, rhs: AlertConfiguration) -> Bool {
         lhs.id == rhs.id &&
         lhs.title == rhs.title &&
         lhs.message == rhs.message &&
@@ -99,7 +99,7 @@ extension AlertConfiguration: Equatable {
 }
 
 extension AlertConfiguration.Action: Equatable {
-    static func == (lhs: AlertConfiguration.Action, rhs: AlertConfiguration.Action) -> Bool {
+    public static func == (lhs: AlertConfiguration.Action, rhs: AlertConfiguration.Action) -> Bool {
         lhs.title == rhs.title &&
         lhs.role == rhs.role &&
         lhs.isPrimaryAction == rhs.isPrimaryAction

@@ -17,7 +17,7 @@ extension AlertConfiguration {
     /// - Returns: An `AlertConfiguration` for unexpected errors, equipped with the specified actions.
     ///
     /// - Note: If a retry action is specified, this alert will include a "Retry" button along with a "Cancel" button. If not, the system will provide the default "Ok" button.
-    static func unknownError(retryAction: (() -> Void)? = nil) -> AlertConfiguration {
+    public static func unknownError(retryAction: (() -> Void)? = nil) -> AlertConfiguration {
         AlertConfiguration(
             title: "Unexpected Error",
             message: "An unexpected error has occurred",

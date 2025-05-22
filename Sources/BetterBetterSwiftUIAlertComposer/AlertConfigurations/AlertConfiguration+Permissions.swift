@@ -21,7 +21,7 @@ extension AlertConfiguration {
     ///   - dismissAction: An optional closure that is called when the user dismisses the alert with the title "Close". If `nil`, the alert will only include the default close action.
     ///   - openSettingsAction: A closure that opens the Settings app. Pass in the logic to open the phone's Settings app (e.g: `UIApplication.shared.open(settingsUrl)`)
     /// - Returns: An `AlertConfiguration` tailored to inform the user about the denied permission and guide them to enable it through the Settings app.
-    static func permissionsDenied(for type: PermissionsType, dismissAction: (() -> Void)? = nil, openSettingsAction: @escaping (() -> Void)) -> AlertConfiguration {
+    public static func permissionsDenied(for type: PermissionsType, dismissAction: (() -> Void)? = nil, openSettingsAction: @escaping (() -> Void)) -> AlertConfiguration {
         var title: LocalizedStringKey
         var message: LocalizedStringKey
         
@@ -75,7 +75,7 @@ extension AlertConfiguration {
     /// It serves to inform users about the nature of the restriction and suggests a course of action, enhancing user understanding and potentially guiding them towards resolving the access issue.
     ///
     /// - Note: If no dismiss action is provided, the system includes a standard “OK” action.
-    static func permissionsRestricted(for type: PermissionsType, dismissAction: (() -> Void)? = nil) -> AlertConfiguration {
+    public static func permissionsRestricted(for type: PermissionsType, dismissAction: (() -> Void)? = nil) -> AlertConfiguration {
         var title: LocalizedStringKey
         var message: LocalizedStringKey
         

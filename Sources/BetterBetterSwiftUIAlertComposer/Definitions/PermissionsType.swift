@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PermissionsType {
+public enum PermissionsType {
     case camera
     case contacts
     case notifications

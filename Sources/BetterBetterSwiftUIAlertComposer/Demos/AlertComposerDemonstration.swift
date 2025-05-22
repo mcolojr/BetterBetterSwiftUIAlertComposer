@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct AlertComposerDemonstration: View {
+public struct AlertComposerDemonstration: View {
     @State private var currentAlertConfiguration: AlertConfiguration?
     
-    var body: some View {
+    public var body: some View {
         List {
             Button("Show Alert") {
                 currentAlertConfiguration = .specific(title: "Title", message: "Message", retryAction: {

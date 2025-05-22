@@ -20,8 +20,8 @@ extension AlertConfiguration {
     /// - Returns: An `AlertConfiguration` instance configured with the specified parameters.
     ///
     /// - Note: A default "OK" action is included to dismiss the alert.
-    static func specific(title: LocalizedStringKey,
-                         message: LocalizedStringKey) -> AlertConfiguration {
+    public static func specific(title: LocalizedStringKey,
+                                message: LocalizedStringKey) -> AlertConfiguration {
         AlertConfiguration(
             title: title,
             message: message,
@@ -40,9 +40,9 @@ extension AlertConfiguration {
     /// - Returns: An `AlertConfiguration` instance configured with the specified parameters.
     ///
     /// - Note: This alert will include a "Retry" button along with a "Cancel" button.
-    static func specific(title: LocalizedStringKey,
-                         message: LocalizedStringKey,
-                         retryAction: @escaping (() -> Void)) -> AlertConfiguration {
+    public static func specific(title: LocalizedStringKey,
+                                message: LocalizedStringKey,
+                                retryAction: @escaping (() -> Void)) -> AlertConfiguration {
         AlertConfiguration(
             title: title,
             message: message,
@@ -65,10 +65,10 @@ extension AlertConfiguration {
     /// - Returns: An `AlertConfiguration` instance configured with the specified parameters.
     ///
     /// - Note: This alert will include a "Retry" button along with a "Cancel" button.
-    static func specific(title: LocalizedStringKey,
-                         message: LocalizedStringKey,
-                         retryAction: @escaping (() -> Void),
-                         cancelAction: (() -> Void)? = nil) -> AlertConfiguration {
+    public static func specific(title: LocalizedStringKey,
+                                message: LocalizedStringKey,
+                                retryAction: @escaping (() -> Void),
+                                cancelAction: (() -> Void)? = nil) -> AlertConfiguration {
         AlertConfiguration(
             title: title,
             message: message,

@@ -84,11 +84,11 @@ import SwiftUI
 /// - Warning: Avoid updating the configuration while the alert is presented, as this may lead to unintended behavior.
 /// Ensure that the configuration's `id` is unique when triggered multiple times to guarantee consistent alert presentation.
 /// Placing this modifier on the first view in the hierarchy is recommended to avoid animation issues.
-struct AlertComposerModifier: ViewModifier {
+public struct AlertComposerModifier: ViewModifier {
     @State private var isPresented: Bool = false
     var configuration: AlertConfiguration?
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .alert(
                 configuration?.title ?? "",
@@ -205,7 +205,7 @@ extension View {
     ///
     /// - Warning: Triggering alerts from deeply nested views may result in UI instability, such as disrupted animations or unexpected view rebuilds.
     /// To maintain consistent behavior, attach this modifier at the root level or a persistent parent view, as shown in Example Usage 2.
-    func alertComposer(_ configuration: AlertConfiguration?) -> some View {
+    public func alertComposer(_ configuration: AlertConfiguration?) -> some View {
         Group {
             if let configuration = configuration {
                 self.modifier(AlertComposerModifier(configuration: configuration))

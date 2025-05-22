@@ -18,7 +18,7 @@ extension AlertConfiguration {
     /// - Returns: An `AlertConfiguration` for no network scenarios, containing only informational content without actionable buttons.
     ///
     /// - Note: By default, no actions are specified. The system will include a standard “OK” action to dismiss the alert.
-    static func noNetwork() -> AlertConfiguration {
+    public static func noNetwork() -> AlertConfiguration {
         AlertConfiguration(
             title: "No network",
             message: "You appear to be offline. Make sure you are connected to Wi-Fi or your cellular network.",
@@ -33,7 +33,7 @@ extension AlertConfiguration {
     ///
     /// This method provides a user-friendly way to notify users of network connectivity issues and offer them an immediate option to retry the operation, enhancing the application's resilience to temporary network problems.
     /// - Note: This alert will include a "Retry" button along with a "Cancel" button.
-    static func noNetwork(retryAction: @escaping () -> Void) -> AlertConfiguration {
+    public static func noNetwork(retryAction: @escaping () -> Void) -> AlertConfiguration {
         AlertConfiguration(
             title: "No network",
             message: "You appear to be offline. Make sure you are connected to Wi-Fi or your cellular network and try again.",
